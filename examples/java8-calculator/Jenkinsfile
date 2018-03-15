@@ -1,0 +1,5 @@
+node('jenkins-slave-mvn'){
+
+    checkout scm
+    sh 'ls'
+}

@@ -2,4 +2,10 @@ node('jenkins-slave-mvn'){
 
     checkout scm
     sh 'ls'
+
+    dir ('examples/java8-calculator'){
+        sh 'mvn clean install'
+        cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL'
+    }
+    
 }
